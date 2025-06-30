@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Servicios</title>
+    <link rel="stylesheet" href="services.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script defer src="services.js"></script>
+</head>
+<body>
+    <div id="login" class="panel">
+        <h1>Iniciar sesión</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <div id="app" class="hidden">
+        <h1>Gestión de Servicios</h1>
+        <button id="logout">Cerrar sesión</button>
+
+        <section id="nuevo-servicio" class="panel">
+            <h2>Nuevo Servicio</h2>
+            <form id="service-form">
+                <input type="text" id="service-name" placeholder="Nombre del servicio" required>
+                <input type="text" id="service-area" placeholder="Área" required>
+                <input type="date" id="service-date" required>
+                <textarea id="service-desc" placeholder="Descripción"></textarea>
+                <input type="file" id="service-photo" accept="image/*" capture="environment" multiple>
+                <button type="submit">Guardar</button>
+            </form>
+            <div id="preview"></div>
+        </section>
+
+        <section id="lista-servicios" class="panel">
+            <h2>Servicios registrados</h2>
+            <ul id="services-list"></ul>
+        </section>
+
+        <section id="calendario" class="panel">
+            <h2>Calendario</h2>
+            <div id="calendar"></div>
+        </section>
+    </div>
+</body>
+</html>
